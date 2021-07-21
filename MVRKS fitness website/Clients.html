@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+            .sidenav a {
+                padding: 6px 6px 6px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+        .thing {
+            margin-left: 200px; /* Same as the width of the sidenav */
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+
+        div.form {
+            display: block;
+            text-align: center;
+        }
+
+        form {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-image: url('../MVRKS Images/Savin-NY-Website-Background-Web-1.jpg');
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="body2">
+    <!--Side navigation menu-->
+    <div class="sidenav">
+        <a href="/MVRKS HOME.htm">Entry page</a>
+        <a href="/MVRKS WELCOME.html">Home</a>
+        <a href="#">Services</a>
+        <a href="/Clients.html">Clients</a>
+        <a href="/Contact page.html">Contact</a>
+    </div>
+    <!--end side navigation-->
+
+    <h1 style="text-align: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">MVRKS Clients</h1>
+    <h2 style="text-align: center; font-family:Georgia">Become a client!</h2>
+
+    <!--Start of form-->
+    <div class="form">
+        <form id="for" name="form1" style="text-align: center"  onsubmit="return validateForm()" enctype="text/plain" method="post">
+            <label>First Name: <input type="text" id="fname" name="fname" required /><br /></label>
+            <label>Last Name: <input type="text" id="lname" name="lname" required /><br /></label>
+            <label>Email:<input type="text" id="email" name="email" required/><br /></label>
+            <label action="mailto:robert.a.portugal@outlook.com" >Message: <br /><textarea cols="35" rows="5" name="mes" id="mes">Tell us about your company here!</textarea></label><br />
+            <button type="submit"> Send your message!</button>
+        </form>
+    </div>
+    <!--end of form-->
+
+    <!--defines JScript funtions -->
+    <script>
+        document.getElementById("for").onmouseover = function () {
+            fun()
+        };
+        function fun() {
+            document.getElementById("for").style.color = "black"
+            document.getElementById("for").style.backgroundColor = "white";
+            document.getElementById("for").style.fontFamily = "Georgia"
+            document.getElementById("for").style.fontSize = "23px";
+            document.getElementById("for").style.border = "4px outset cyan";
+        }
+        document.getElementById("for").onmouseout = function() {
+            unfun()
+        };
+        function unfun() {
+            document.getElementById("for").style.color = "black"
+            document.getElementById("for").style.backgroundColor = "white";
+            document.getElementById("for").style.fontFamily = "Times new roman"
+            document.getElementById("for").style.fontSize = "15px";
+            document.getElementById("for").style.border = "4px outset";
+        }
+
+        function validateForm() {
+            let x = document.forms["form1"]["fname"]["lname"]["mes"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+    <!--end JScript functions-->
+</body>
+</html>
